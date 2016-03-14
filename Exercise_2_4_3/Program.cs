@@ -27,7 +27,7 @@ namespace WebServiceExample
                 new { Id = 3, Name = "Sue"}
             };
 
-            var service = new TcpListener(IPAddress.Any, 51111);
+            var service = new TcpListener(IPAddress.Any, 51234);
             service.Start();
             while (true)
             {
@@ -37,7 +37,7 @@ namespace WebServiceExample
                 int i = stream.Read(bytes, 0, bytes.Length);
                 string data = Encoding.ASCII.GetString(bytes, 0, i);
 
-                string msg = "Hello, use http://localhost:51111/api/persons";
+                string msg = "Hello, use http://localhost:51234/api/persons";
 
                 if (data.Contains("api/persons"))
                 {
